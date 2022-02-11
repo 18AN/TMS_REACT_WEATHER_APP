@@ -11,10 +11,17 @@ class App extends Component {
     }
     
     render(){
-        console.log(this.props)
         return(
             <div>
-                <div>Weather Forecast</div>
+                <div>
+                    {this.props.isReady ? 
+                    <div> {this.props.json.list.map((day, index) => {
+                        return(<div key={index}>
+                              <p>Temperature:{day.main.temp}</p>
+                          </div>)})} 
+                    </div>
+                    :<p>Loading...</p> }
+                </div>
             </div>
         );
     }
@@ -22,7 +29,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        json: state.json
+        json: state.reducer.json,
+        isReady: state.reducer.isReady
     };
 };
 

@@ -1,6 +1,7 @@
 export const GET_WEATHER_FORECAST = "GET_WEATHER_FORECAST";
 
 export function fetchWeatherDataSucces(json){
+    console.log(json)
     return {
         type: GET_WEATHER_FORECAST,
         payload: json
