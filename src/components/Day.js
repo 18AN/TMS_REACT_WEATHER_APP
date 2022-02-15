@@ -1,11 +1,11 @@
 import React from "react";
-import Date from "./Date";
+import ActualDate from "./Date";
 import ActualWeather from "./ActualWeather";
 
 function Day(props){
     return(
         <div>
-            <Date date={props.date}/>
+            <ActualDate date={props.date}/>
             <ActualWeather actualWeather={props.actualWeather}/>
         </div>
     )

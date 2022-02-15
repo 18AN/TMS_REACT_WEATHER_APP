@@ -1,4 +1,14 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: aqua;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
