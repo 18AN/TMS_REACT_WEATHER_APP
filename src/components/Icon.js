@@ -1,9 +1,17 @@
 import React from "react";
 
-function Icon(){
-    return(
+function Icon(props){
+    return(props.main == "Snow" ?
         <div>
-            <div>Icon</div>
+            <div>
+                <img src="icons/Snow.png"/>
+            </div>
+        </div>
+        :
+        <div>
+            <div>
+                <img src="icons/Snow.png"/>
+            </div>
         </div>
     )
 }

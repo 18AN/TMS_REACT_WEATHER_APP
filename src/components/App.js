@@ -3,7 +3,7 @@ import Week from "./Week";
 
 function App (){
     return(
-        <div>
+        <div className="app">
             <Week/>
         </div>
     )

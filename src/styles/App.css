@@ -1,14 +1,84 @@
+@font-face {
+  font-family: "Krona_One";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Krona_One"),
+       url(/fonts/Krona_One/KronaOne-Regular.woff);
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Oswald"),
+       url(/fonts/Oswald/static/Oswald-Regular.woff);
+}
+
+
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
+html{
+  font-size: 16px;
+}
+
 body {
     margin: 0;
-    background-color: aqua;
+    padding: 0;
+    background-color: #E5E5E5;
 }
 
 img {
     max-width: 100%;
     display: block;
+}
+
+.app{
+  margin-top: 7rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2.5rem;
+  max-width: 60rem;
+  min-height: 30rem;
+  max-height: fit-content;
+  background-color: #E9F5FA;;
+}
+
+.week{
+  display: grid;
+  grid-template-columns: 1.5rem 7rem 7rem 7rem 7rem 7rem 7rem 7rem 1.5rem;
+  grid-gap: 1rem;
+}
+
+.first-day{
+  grid-column-start: 2;
+  min-height: 25rem;
+}
+
+.actual-week-day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4DB0D3;
+    font-family: "Krona_One", "Arial", sans-serif;
+}
+
+.actual-day{
+  font-size: .8rem;
+}
+
+.actual-date{
+  font-size: 2rem;
+}
+
+.actual-weather{
+  min-height: 21.5rem;
+  margin-top: 0.5rem;
+  border: .1rem solid blueviolet;
+  border-radius: 2rem;
 }

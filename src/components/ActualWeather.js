@@ -5,10 +5,10 @@ import Humidity from "./Humidity";
 import Pressure from "./Pressure";
 
 function ActualWeather(props){
-    let{temp,humidity,pressure} = props.actualWeather
+    let{main,temp,humidity,pressure} = props.actualWeather
     return(
-        <div>
-            <Icon/>
+        <div className="actual-weather">
+            <Icon main={main}/>
             <Temperature temperature={temp}/>
             <Humidity humidity={humidity}/>
             <Pressure pressure={pressure}/>
