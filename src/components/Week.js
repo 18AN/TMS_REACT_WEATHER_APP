@@ -15,10 +15,10 @@ class Week extends Component {
             <div>               
                     {this.props.isReady ? 
                     <div className="week"> {this.props.json.daily.filter(day => this.props.json.daily.indexOf(day) < 7).map((day, index) => {
-                        let {dt,humidity,pressure} = day;
+                        let {dt,humidity,pop} = day;
                         let temp = day.temp.day;
-                        let main = day.weather.main;
-                        return(<Day key={index} index={index} date={dt} actualWeather={{main, temp, humidity, pressure }}/>)})} 
+                        let main = day.weather[0].main;
+                        return(<Day key={index} index={index} date={dt} actualWeather={{main, temp, humidity, pop }}/>)})} 
                     </div>
                     :<p>Loading...</p> }
             </div>
