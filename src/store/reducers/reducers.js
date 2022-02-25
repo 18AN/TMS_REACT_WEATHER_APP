@@ -6,7 +6,6 @@ const initialState = {
 }
 
 export function reducer (state = initialState, action){
-    console.log(action.payload)
     switch (action.type){
         case GET_WEATHER_FORECAST:
             return {...state, json: action.payload, isReady: true};      

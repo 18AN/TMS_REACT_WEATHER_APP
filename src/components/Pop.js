@@ -4,6 +4,7 @@ let style = {
     display: "flex",
     justifyContent: "center",
     fontFamily: "Oswald", "Arial": "sans-serif",
+    transform: "translateX(1.7rem)"
 }
 
 function Pop(props){
@@ -17,10 +18,13 @@ function Pop(props){
     main == 'Thunderstorm' ? popColor = {style:{color: "#D3EBF4"}, icon:{path:"icons/umbrella-blue.png"}}:
     style = {color: "transparent"};
     return(
-        <div style={Object.assign({}, style , popColor.style)}>
+        <div style={{display: "flex"}}>
             <img src={popColor.icon.path} className="umbrella"/>
-            {`${Math.round(props.pop * 100)}%`}
+            <div style={Object.assign({}, style , popColor.style)}>
+                {`${Math.round(props.pop * 100)} %`}
+            </div>
         </div>
+        
     )
 }
 

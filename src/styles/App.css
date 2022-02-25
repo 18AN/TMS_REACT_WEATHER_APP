@@ -90,7 +90,7 @@ img {
 
 .umbrella{
   max-height: 1.5rem;
-  margin-right: 0.7rem;
+  transform: translateX(1.3rem);
 }
 
 .humidity{
