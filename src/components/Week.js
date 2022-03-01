@@ -1,34 +1,42 @@
-import React, { Component } from "react";
-import {connect} from "react-redux"
-import { loadData } from "../store/actions.js";
-import Day from "./Day.js";
+import React, {Component} from "react";
+import { connect } from "react-redux";
+import {fetchWeatherData} from "../store/actions/actions";
+import Day from "./Day";
 
 
 class Week extends Component {
-    constructor(){
-        super()
-
-        this.onChangeButton = this.onChangeButton.bind(this)
+    
+    componentDidMount(){
+         this.props.fetchData("https://api.openweathermap.org/data/2.5/onecall?lat=53.893009&lon=27.567444&exclude=current,minutely,hourly,alerts&units=metric&lang=ru&appid=d1e621bf32fdae6d77225aaeb58e1c8f")
     }
     
-    onChangeButton(){
-        const dispatch = this.props.dispatch;
-        dispatch(loadData)
-    }
-    render (){
-        console.log(this.props)
-        return (
-            <div>
-                <button onChange={this.onChangeButton}>Get Weather Forecast</button>
-                <Day />
+    render(){
+        return(
+            <div>               
+                    {this.props.isReady ? 
+                    <div className="week"> {this.props.json.daily.filter(day => this.props.json.daily.indexOf(day) < 7).map((day, index) => {
+                        let {dt,humidity,pop} = day;
+                        let temp = day.temp.day;
+                        let main = day.weather[0].main;
+                        return(<Day key={index} index={index} date={dt} actualWeather={{main, temp, humidity, pop }}/>)})} 
+                    </div>
+                    :<p>Loading...</p> }
             </div>
         );
     }
 }
-const putStateToProps = (state) => {
+
+const mapStateToProps = (state) => {
     return {
-        weatherData: state.weatherData
-    }
-}
-const WrappedWeekComponent = connect(putStateToProps)(Week)
-export default WrappedWeekComponent;
+        json: state.reducer.json,
+        isReady: state.reducer.isReady
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchData: url => dispatch(fetchWeatherData(url))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Week);

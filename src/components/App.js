@@ -1,15 +1,12 @@
-import React, { Component } from "react";
-import '../styles/App.css';
-import WrappedWeekComponent from "./Week.js";
+import React from "react";
+import Week from "./Week";
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <WrappedWeekComponent />
-            </div>
-        );
-    }
+function App (){
+    return(
+        <div className="app">
+            <Week/>
+        </div>
+    )
 }
 
 export default App;

@@ -1,4 +1,95 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
+@font-face {
+  font-family: "Krona_One";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Krona_One"),
+       url(/fonts/Krona_One/KronaOne-Regular.woff);
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Oswald"),
+       url(/fonts/Oswald/static/Oswald-Regular.woff);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E5E5E5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.circle{
+  max-height: 1rem;
+  margin-top: 1rem;
+}
+
+.app{
+  margin-top: 7rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2.5rem;
+  max-width: 60rem;
+  min-height: 30rem;
+  max-height: fit-content;
+  background-color: #E9F5FA;;
+}
+
+.week{
+  display: grid;
+  grid-template-columns: 1.5rem 7rem 7rem 7rem 7rem 7rem 7rem 7rem 1.5rem;
+  grid-gap: 1rem;
+}
+
+.first-day{
+  grid-column-start: 2;
+  min-height: 25rem;
+}
+
+.actual-week-day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4DB0D3;
+    font-family: "Krona_One", "Arial", sans-serif;
+}
+
+.actual-day{
+  font-size: .8rem;
+}
+
+.actual-date{
+  font-size: 2rem;
+}
+
+.temperature{
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 5rem;
+}
+
+.umbrella{
+  max-height: 1.5rem;
+  transform: translateX(1.3rem);
+}
+
+.humidity{
+  max-height: 1.5rem;
 }
