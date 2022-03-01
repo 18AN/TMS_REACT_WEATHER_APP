@@ -1,4 +1,4 @@
-export const GET_WEATHER_FORECAST = "GET_WEATHER_FORECAST";
+import { GET_WEATHER_FORECAST } from "./actionTypes";
 
 export function fetchWeatherDataSucces(json){
     return {

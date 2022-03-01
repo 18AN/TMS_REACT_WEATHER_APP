@@ -1,4 +1,4 @@
-import { GET_WEATHER_FORECAST } from "../actions/actions";
+import { GET_WEATHER_FORECAST } from "../actions/actionTypes";
 
 const initialState = {
     json: {},
