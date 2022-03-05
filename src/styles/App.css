@@ -93,3 +93,65 @@ img {
 .humidity{
   max-height: 1.5rem;
 }
+
+.Snow{
+  transform: translateX(-0.3rem);
+  max-width: 115%;
+  margin-bottom: 1.1rem;
+}
+
+.Rain{
+  transform: translateX(1.5rem);
+  max-width: 83%;
+}
+
+.Clear{
+  transform: translateX(0.5rem);;
+  max-width: 85%;
+  margin-bottom: 1.9rem;
+}
+
+.Clouds{
+  transform: translateX(-0.7rem);
+  max-width: 125%;
+}
+
+.Thunderstorm{
+  transform: translateX(-0.5rem);
+  max-width: 130%;
+  margin-bottom: 1rem;
+}
+
+.Drizzle{
+  transform: translateX(-0.7rem);
+}
+
+.pop-light{
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", "Arial", sans-serif;
+  transform: translateX(1.7rem);
+  color: #D3EBF4;
+}
+
+.pop-dark{
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", "Arial", sans-serif;
+  transform: translateX(1.7rem);
+  color: #247490;
+}
+
+.humidity-light{
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", "Arial", sans-serif;
+  color: #D3EBF4;
+}
+
+.humidity-dark{
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", "Arial", sans-serif;
+  color: #247490;
+}
