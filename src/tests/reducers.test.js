@@ -18,6 +18,4 @@ describe('reducer', () => {
             isReady: true
         })
     })
-
-    it
 })
