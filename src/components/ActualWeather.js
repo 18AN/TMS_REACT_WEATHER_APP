@@ -3,6 +3,8 @@ import Icon from "./Icon";
 import Temperature from "./Temperature";
 import Humidity from "./Humidity";
 import Pop from "./pop";
+import {selectColor} from "../utils/functions"
+
 let actualWeather = {
     minHeight: "21.5rem",
     marginTop: "0.5rem",
@@ -13,16 +15,10 @@ let actualWeather = {
 
 function ActualWeather(props){
     const{main,temp,humidity,pop} = props.actualWeather;
-    let style;
-    main == 'Clear' ? style = {backgroundColor: "#E6DF95"}:
-    main == 'Clouds' ? style = {backgroundColor: "#4DB0D3"}:
-    main == 'Rain' ? style = {backgroundColor: "#2B8BAD"}:
-    main == 'Drizzle' ? style = {backgroundColor: "#2B8BAD"}:
-    main == 'Thunderstorm' ? style = {backgroundColor: "#0E2E3A"}:
-    main == 'Snow' ? style = {backgroundColor: "#BCE1EF"}:
-    style = {backgroundColor: "transparent"};
+    let color = selectColor(main)
+    let style = {...actualWeather, backgroundColor: `${color}` }
     return(
-        <div  style={Object.assign({}, actualWeather , style)}>
+        <div  style={style}>
             <Icon main={main}/>
             <Temperature temperature={temp} main={main}/>
             <Pop pop={pop} main={main}/>

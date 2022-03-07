@@ -1,5 +1,5 @@
 import React from "react";
-import { getWeekDay } from "../utils/utils"; 
+import { getWeekDay } from "../utils/functions"; 
 
 function ActualDate(props){
     const date = new Date(props.date * 1000);

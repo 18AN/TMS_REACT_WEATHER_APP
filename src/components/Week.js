@@ -1,26 +1,23 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 import {fetchWeatherData} from "../store/actions/actions";
-import Day from "./Day";
-
+import { request } from "../utils/variables";
+import { putPropsIntoDay } from "../utils/functions";
 
 class Week extends Component {
     
     componentDidMount(){
-         this.props.fetchData("https://api.openweathermap.org/data/2.5/onecall?lat=53.893009&lon=27.567444&exclude=current,minutely,hourly,alerts&units=metric&lang=ru&appid=d1e621bf32fdae6d77225aaeb58e1c8f")
+         this.props.fetchData(request)
     }
     
     render(){
         return(
             <div>               
-                    {this.props.isReady ? 
-                    <div className="week"> {this.props.json.daily.filter(day => this.props.json.daily.indexOf(day) < 7).map((day, index) => {
-                        let {dt,humidity,pop} = day;
-                        let temp = day.temp.day;
-                        let main = day.weather[0].main;
-                        return(<Day key={index} index={index} date={dt} actualWeather={{main, temp, humidity, pop }}/>)})} 
-                    </div>
-                    :<p>Loading...</p> }
+                {this.props.isReady ? 
+                 <div className="week">
+                    {putPropsIntoDay(this.props.json.daily)} 
+                </div>
+                :<p>Loading...</p> }
             </div>
         );
     }
