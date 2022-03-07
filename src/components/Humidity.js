@@ -1,5 +1,5 @@
 import React from "react";
-import { selectImage } from "../utils/utils";
+import { selectImage } from "../utils/functions";
 
 function Humidity(props){
     let main = props.main;
